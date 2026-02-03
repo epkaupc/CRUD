@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Bungee&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bklist{
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.title{
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@keyframes title {
+  0% {
+    text-shadow: 0 0 5px black;
+  }
+  25% {
+    text-shadow: 0 0 15px red, 0 0 30px red;
+  }
+
+  50% {
+    text-shadow: 0 0 15px purple, 0 0 30px purple;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff;
+  }
+}
+
+.title {
+  animation: title 10s infinite ease;
+}
+
+.link {
+  font-size: 35px;
+  color: white;
+  font-family: bungee, sans-serif;
+ }
+
+.delete-button{
+  display: inline; 
+  margin-left: 1rem;
+  color: red;
+  background-color: transparent;
+}
+
+:hover .delete-button{
+  cursor: pointer;
+  text-decoration: underline;
+}
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #6200ee;
+  color: white;
+  cursor: pointer;
+}
