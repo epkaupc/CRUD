@@ -21,10 +21,10 @@
 
 @keyframes title {
   0% {
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 px black;
   }
   25% {
-    text-shadow: 0 0 15px red, 0 0 30px red;
+    text-shadow: 0 0 15px red, 0 0 30px white;
   }
 
   50% {
@@ -55,6 +55,7 @@
 :hover .delete-button{
   cursor: pointer;
   text-decoration: underline;
+  
 }
 input {
   font-size: 1rem;
@@ -72,5 +73,24 @@ button {
   border: none;
   background-color: #6200ee;
   color: white;
-  cursor: pointer;
+  cursor: pointer;;
 }
+
+button:hover {
+  background-color: #3700b3;
+  box-shadow: 0 0 10px #6200ee;
+  animation: ease-in button 3s infinite;
+}
+
+@keyframes button {
+  0% {
+    box-shadow: 0 0 5px #6200ee;
+  }
+  50% {
+    box-shadow: 0 0 20px #bb86fc;
+  }
+  100% {
+    box-shadow: 0 0 5px #6200ee;
+  }
+}
+
