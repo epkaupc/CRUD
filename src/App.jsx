@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import BookmarkForm from './assets/components/BookmarForm.jsx'
-import { BookmarkList } from './assets/components/BookmarList.jsx'
+import BookmarkForm from './assets/components/BookmarkForm.jsx'
+import { BookmarkList } from './assets/components/BookmarkList.jsx'
 import DeleteForm from './assets/components/DeleteForm.jsx'
 import { supabase } from './lib/supabase.js'
 
@@ -84,6 +84,7 @@ const editingBookmark = bookmarks.find(b => b.id === editingId)
      <BookmarkList
   bookmarks={bookmarks}
   onEdit={startEdit}
+  supabase={supabase}
 />
     </div>
   )

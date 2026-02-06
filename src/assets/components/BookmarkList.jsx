@@ -1,10 +1,31 @@
+import { useEffect } from 'react';
+import supabase from '../../lib/supabase.js'
 import Editbooks from './Editbooks.jsx'
 
+
+async function fetchBookmarks(setBookmarks) {
+  useEffect(() => {
+      
+      const { data, error } = supabase  
+        .from('bookmarks')
+        .select('*')
+      if (error) {
+        console.error('Erro ao buscar bookmarks:', error)
+      } else {
+        setBookmarks(data)
+      }
+    })
+
+  fetchBookmarks(setBookmarks);
+};
+    
 export function BookmarkList({ bookmarks = [], onEdit }) {
   if (bookmarks.length === 0) return null
 
   return (
-    <ul className="bklist">
+    supabase.from('bookmarks').select('id, title, url'),
+  <ul className="bklist">
+    fechBookmarks();
       {bookmarks.map(bookmark => (
         <li key={bookmark.id}>
           <a
