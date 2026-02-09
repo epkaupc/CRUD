@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Bungee&display=swap');
 
+
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,7 +16,8 @@
 }
 
 .title{
-  font-size: 2.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+  font-size: 105px;
   color: white;
   margin-bottom: 1rem;
   text-align: center;
@@ -21,14 +25,14 @@
 
 @keyframes title {
   0% {
-    text-shadow: 0 0 px black;
+    text-shadow: 0 0 0 black;
   }
   25% {
-    text-shadow: 0 0 15px red, 0 0 30px white;
+    text-shadow: 0 0 5px white, 0 0 10px white;
   }
 
   50% {
-    text-shadow: 0 0 15px purple, 0 0 30px purple;
+    text-shadow: 0 0 5px white, 0 0 10px white;
   }
   100% {
     text-shadow: 0 0 5px #fff;
@@ -36,11 +40,12 @@
 }
 
 .title {
-  animation: title 10s infinite ease;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  animation: title 5s infinite ease;
 }
 
 .link {
-  font-size: 35px;
+  font-size: 55px;
   color: white;
   font-family: bungee, sans-serif;
  }
@@ -52,11 +57,6 @@
   background-color: transparent;
 }
 
-:hover .delete-button{
-  cursor: pointer;
-  text-decoration: underline;
-  
-}
 input {
   font-size: 1rem;
   padding: 0.5rem;
@@ -79,18 +79,35 @@ button {
 button:hover {
   background-color: #3700b3;
   box-shadow: 0 0 10px #6200ee;
-  animation: ease-in button 3s infinite;
+  animation: ease button 3s infinite;
 }
 
 @keyframes button {
-  0% {
-    box-shadow: 0 0 5px #6200ee;
+  25% {
+    box-shadow: 0 0 5px #3700b3;
   }
   50% {
-    box-shadow: 0 0 20px #bb86fc;
+    box-shadow: 0 0 20px #3700b3;
   }
   100% {
-    box-shadow: 0 0 5px #6200ee;
+    box-shadow: 0 0 5px #3700b3;
   }
 }
 
+delete-form:hover {
+  background-color: #ba000d;
+  box-shadow: 0 0 10px #ba000d;
+  animation: ease-in delete-form 3s infinite;
+}
+
+@keyframes delete-form {
+  0% {
+    box-shadow: 0 0 5px red;
+  }
+  50% {
+    box-shadow: 0 0 20px red;
+  }
+  100% {
+    box-shadow: 0 0 5px red;
+  }
+}

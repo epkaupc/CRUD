@@ -48,16 +48,6 @@ function startEdit(id) {
 
 function saveEdit(updated)
 {
-  supabase
-    .from('bookmarks')
-    .update([
-      {
-        user_id: user.id,
-        title: updated.title,
-        url: updated.url
-      } 
-    ])
-
   setBookmarks(prev =>
     prev.map(b =>
       b.id === updated.id ? updated : b
