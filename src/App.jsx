@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import BookmarkForm from '../src/components/BookmarForm.jsx'
-import { BookmarkList } from '../src/components/BookmarList.jsx'
+import BookmarkForm from './components/BookmarkForm.jsx'
+import { BookmarkList } from './components/BookmarkList.jsx'
 import DeleteForm from '../src/components/DeleteForm.jsx'
 
 const user = { id: "90a2d637-8d2f-4c51-813c-cb8401aad7e5" }
