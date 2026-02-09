@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import BookmarkForm from './assets/components/BookmarForm.jsx'
-import { BookmarkList } from './assets/components/BookmarList.jsx'
-import DeleteForm from './assets/components/DeleteForm.jsx'
-import { supabase } from './lib/supabase.js'
+import BookmarkForm from '../src/components/BookmarForm.jsx'
+import { BookmarkList } from '../src/components/BookmarList.jsx'
+import DeleteForm from '../src/components/DeleteForm.jsx'
 
 const user = { id: "90a2d637-8d2f-4c51-813c-cb8401aad7e5" }
 
@@ -13,28 +12,10 @@ function App() {
 
 
 function addBookmark(bookmark) {
-  supabase
-    .from('bookmarks')
-    .insert([
-      {
-        user_id: user.id,
-        title: bookmark.title,
-        url: bookmark.url
-      } 
-    ])
-    .select()
-    .then(({ data, error }) => {
-      if (error) {
-        console.error('Erro ao adicionar bookmark:', error)
-      } else {
-        const newBookmark = data[0]
-        setBookmarks(prev => [...prev, newBookmark])
-      }
-    })
+  const sql = `INSERT INTO bookmarks (title, url, user_id) VALUES (?, ?, ?)`
   setBookmarks(prev => [
     ...prev,
-    { ...bookmark, id: Date.now() 
-    }
+    { ...bookmark, id: Date.now() }
   ])
 }
 
@@ -72,8 +53,8 @@ const editingBookmark = bookmarks.find(b => b.id === editingId)
 {editingId && <p>Editando ID: {editingId}</p>}
 
      <BookmarkList
-  bookmarks={bookmarks}
-  onEdit={startEdit}
+      bookmarks={bookmarks}
+    onEdit={startEdit}
 />
     </div>
   )
